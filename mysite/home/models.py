@@ -3,7 +3,7 @@ from django.db import models
 from wagtail.core.models import Page
 from wagtail.core.fields import RichTextField
 from wagtail.admin.edit_handlers import FieldPanel, PageChooserPanel
-from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.images.edit_handlers import ImageChooserPanel,FieldPanel
 
 
 class HomePage(Page):
@@ -32,7 +32,7 @@ class HomePage(Page):
     content_panels = Page.content_panels + [
         FieldPanel("banner_title"),
         FieldPanel("banner_subtitle"),
-        ImageChooserPanel("banner_image"),
+        FieldPanel("banner_image"),
         PageChooserPanel("banner_cta")
     ]
 
